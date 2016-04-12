@@ -196,7 +196,7 @@ def gdisconnect():
         return response
 
 
-# JSON APIs to view Restaurant Information
+# JSON APIs to view Catalog Information
 @app.route('/genre/<int:genre_id>/JSON')
 def genreSongJSON(genre_id):
     genre = Genre.query.filter_by(id = genre_id).one()
