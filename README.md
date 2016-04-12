@@ -1,5 +1,3 @@
-# catalog
-
 # Item-Catalog
 My solution for Item Catalog of music project from Project 3 in Udacity's Full Stack Development Nanodegree.
 
