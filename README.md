@@ -1,8 +1,8 @@
 # Item-Catalog
 
-Item Catalog of music project is spired by Project 3 in Udacity's Full Stack Development Nanodegree.
+Item Catalog of music project is inspired by Project 3 in Udacity's Full Stack Development Nanodegree.
 
-This is a python module that creates a website and JSON API for a list of song items grouped into a genre category. Users are required to use their goole account to login.
+This is a python module that creates a website and JSON API for a list of song items grouped into a genre category. Users are required to use their goole account to login. Users can add, edit and delete their own music genres and songs in the web applicaiton.
 
 ## Instrucitons to Run Project
 
