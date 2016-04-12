@@ -1,0 +1,17 @@
+<div class="row top-menu">
+	<div class="col-md-6">
+		<a href="{{url_for('showCatalog')}}">
+			<span class="glyphicon glyphicon-home" aria-hidden="true"></span>Show All Music Categories
+		</a>
+	</div>
+		<div class="col-md-6 text-right">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="username">{{username}}</span>
+				<p></p>
+				{% if flag != 0 %}
+					<a href = '{{url_for('gdisconnect')}}'>
+						<button class="btn btn-default delete">
+						<span class="glyphicon glyphicon-off" aria-hidden="true"></span>Log Out</button>
+					</a>
+				{% endif %}	
+		</div>
+</div>
