@@ -222,7 +222,7 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 
 Base.query = db_session.query_property()
 
-# Show all restaurants
+# Show all catalog of music genre
 @app.route('/')
 @app.route('/catalog/')
 def showCatalog():
@@ -233,7 +233,7 @@ def showCatalog():
     else:
         return render_template('catalog.html', genres=genres, username = login_session['username'])
 
-# Create a new restaurant
+# Create a new genre
 
 
 @app.route('/genre/new/', methods=['GET', 'POST'])
@@ -250,7 +250,7 @@ def newGenre():
     else:
         return render_template('newGenre.html', username = login_session['username'])
 
-# Edit a restaurant
+# Edit a genre
 
 
 @app.route('/genre/<int:genre_id>/edit/', methods=['GET', 'POST'])
@@ -269,7 +269,7 @@ def editGenre(genre_id):
         return render_template('editGenre.html', genre=editedGenre, username = login_session['username'])
 
 
-# Delete a restaurant
+# Delete a genre
 @app.route('/genre/<int:genre_id>/delete/', methods=['GET', 'POST'])
 def deleteGenre(genre_id):
     genreToDelete = Genre.query.filter_by(id=genre_id).one()
@@ -287,7 +287,7 @@ def deleteGenre(genre_id):
     else:
         return render_template('deleteGenre.html', genre=genreToDelete, username = login_session['username'])
 
-# Show a restaurant menu
+# Show a Genre list
 
 
 @app.route('/catalog/<int:genre_id>/')
@@ -302,7 +302,7 @@ def showGenre(genre_id):
         return render_template('genre.html', songs=songs, genre=genre, creator=creator, username = login_session['username'])
 
 
-# Create a new menu item
+# Create a new song
 @app.route('/catalog/<int:genre_id>/list/new/', methods=['GET', 'POST'])
 def newSong(genre_id):
     if 'username' not in login_session:
@@ -321,7 +321,7 @@ def newSong(genre_id):
 
     return render_template('newSong.html', genre_id=genre_id)
 
-# Edit a menu item
+# Edit an existing song
 
 
 @app.route('/catalog/<int:genre_id>/list/<int:song_id>/edit', methods=['GET', 'POST'])
@@ -349,7 +349,7 @@ def editSong(genre_id, song_id):
         return render_template('editSong.html', genre_id=genre_id, song_id=song_id, song=editedSong)
 
 
-# Delete a menu item
+# Delete a song
 @app.route('/catalog/<int:genre_id>/list/<int:song_id>/delete', methods=['GET', 'POST'])
 def deleteSong(genre_id, song_id):
     if 'username' not in login_session:
